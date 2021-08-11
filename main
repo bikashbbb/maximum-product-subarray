@@ -1,0 +1,24 @@
+#User function Template for python3
+class Solution:
+    overallmax = 0
+    def maxProduct(self,arr,n):
+        current_max = 1
+        for i in arr:
+            current_max *=i
+            if current_max> self.overallmax:
+                self.overallmax = current_max
+            if current_max == 0:
+                current_max = 1
+        current_max=1
+        p = n-1    
+        while p!=0:
+            current_max *=arr[p]
+            if current_max> self.overallmax:
+                self.overallmax = current_max
+            if current_max == 0:
+                current_max =1
+            p-=1        
+        return self.overallmax
+        
+        
+  # time complexity of this algorithm is O(2n) i.e O(n)
